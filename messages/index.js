@@ -37,13 +37,15 @@ var intents = new builder.IntentDialog({ recognizers: [recognizer] })
 
 .matches("PasswordReset", function(session, args) {
     
-    session.send("How frustrating, your account is locked!  Should I reset your password now?  Then you can create a new password the next time you logon.");
+    session.say("How frustrating! You're account is locked.", "I'm sorry, but you're account is locked. Should we reset your password?");
 
-    builder.Prompts.confirm(session, 'pw prompt', {                                    
-        speak: "How frustrating, your account is locked!  Should I reset your password now?  Then you can create a new password the next time you logon.",                                               
-        retrySpeak: 'Say yes to reset your password.',  
-        inputHint: builder.InputHint.expectingInput                                              
-    });    
+    //session.send("How frustrating, your account is locked!  Should I reset your password now?  Then you can create a new password the next time you logon.");
+
+    // builder.Prompts.confirm(session, 'pw prompt', {                                    
+    //     speak: "How frustrating, your account is locked!  Should I reset your password now?  Then you can create a new password the next time you logon.",                                               
+    //     retrySpeak: 'Say yes to reset your password.',  
+    //     inputHint: builder.InputHint.expectingInput                                              
+    // });    
 })
 
 .onDefault((session) => {
